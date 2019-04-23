@@ -2,7 +2,7 @@ version: "3"
 services:
   web:
     # replace username/repo:tag with your name and image details
-    image: denglt/study:latest
+    image: denglt/friendlyhello:latest
     deploy:
       replicas: 5
       resources:
@@ -37,6 +37,15 @@ services:
         constraints: [node.role == manager]
     command: redis-server --appendonly yes
     networks:
-      - webnet      
+      - webnet
 networks:
   webnet:
+
+# docker stack deploy -c docker-compose.yml getstartedlab
+
+# 手动 create  service
+#docker@myvm1:~$ docker service create --replicas 2 --name myservice --network my-attachable-overlay   denglt/friendlyhello
+#paswn8n4sv7dzz8nxkeddb357
+#overall progress: 2 out of 2 tasks
+#1/2: running   [==================================================>]
+#2/2: running   [==================================================>]
